@@ -48,6 +48,7 @@ public class GetTitle {
     	Thread.sleep(120);
     	driver.findElement(By.className("gLFyf")).clear();
     	Thread.sleep(120);
+    	
     	driver.close();
     	driver.quit();
     }

@@ -30,7 +30,7 @@ public class getText {
     	System.out.println("Get Text Value of Browser Stack\t" + element2.getText());
     	
     	
-    	//getAttribute Name
+    	//getAttribute() is used to fetch the value of an HTML attribute of a web element.
     	System.out.println("Get Text Value of Browser Stact" + element2.getAttribute("sd"));
     	
 	}
