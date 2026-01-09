@@ -16,6 +16,7 @@ public class getText {
 		
     	WebDriverManager.chromedriver().setup(); 
     	driver = new ChromeDriver();
+    	driver.manage().window().maximize();
     	driver.get(url);
     	driver.getTitle();
     	WebElement divElement = driver.findElement(By.xpath("(//body)[1]"));
@@ -26,6 +27,7 @@ public class getText {
     	
     	driver = new ChromeDriver();
     	driver.get(url2);
+    	driver.manage().window().maximize();
     	WebElement element2 = driver.findElement(By.tagName("h1"));
     	System.out.println("Get Text Value of Browser Stack\t" + element2.getText());
     	
