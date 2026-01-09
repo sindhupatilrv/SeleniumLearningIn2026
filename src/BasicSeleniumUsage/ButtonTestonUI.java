@@ -15,6 +15,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * xpath 
  * WebElement value is return Value is String eg. WebElement element = element.getText() -> return String 
  * How to pass int value in .SendKey() - sendKeys(String.valueOf(number1));
+ * Convert int to String - String actualSumStr = String.valueOf(intVariable);
+ * Comvert String to Int Value - String expectedSumStr = totalSum.getText(); int expectedSum = Integer.parseInt(expectedSumStr);
  */
 
 public class ButtonTestonUI {
@@ -47,16 +49,17 @@ public class ButtonTestonUI {
 		// Two elements click
 		
 		driver.findElement(By.xpath("//input[@id ='sum1']")).sendKeys(String.valueOf(number1));
-		driver.findElement(By.xpath("//input[@id ='sum2']")).sendKeys(String.valueOf(number1));
+		driver.findElement(By.xpath("//input[@id ='sum2']")).sendKeys(String.valueOf(number2));
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath(" //button[normalize-space()='Get Sum']")).click();
 		
 		int actualSum  = number1 + number2;
 		String as = String.valueOf(actualSum);
+		
 		WebElement totalSum = driver.findElement(By.xpath("//p[@id='addmessage']"));
 		String expectedSum = totalSum.getText();
-		System.out.println("Output from Get text -int Value" + expectedSum);
-		System.out.println("Actual data" + as);	
+		System.out.println("Output from Get text -int Value\t" + expectedSum);
+		System.out.println("Actual data\t" + as);	
 		driver.close();
 		
 		
