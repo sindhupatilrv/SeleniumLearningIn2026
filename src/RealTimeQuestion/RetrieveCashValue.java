@@ -32,7 +32,14 @@ public class RetrieveCashValue {
 	        driver.close();
 	        driver.quit();
 		
-		
+	        
+	       /* /What does CSS selector input:not([type='hidden']) select?
+	        		What is the default timeout for implicit wait?
+	        				
+	        				What is the Select class used for?
+	        						How do you handle shadow DOM elements?
+	        								ow to handle StaleElementReferenceException?
+		*/
 		
 	}
 
