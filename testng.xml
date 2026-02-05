@@ -1,0 +1,8 @@
+<suite name="Automation Suite">
+    <test name="Smoke Tests">
+        <classes>
+            <class name="TestNGAutomationFramework"/>
+            
+        </classes>
+    </test>
+</suite>
