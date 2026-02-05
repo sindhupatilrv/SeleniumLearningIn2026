@@ -1,18 +1,22 @@
 package Intermediate;
 
-import java.time.Duration;
-
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.reporters.jq.TimesPanel;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+/*
+ * Basic Alert Usage 
+ *  driver.switchTo().alert() - to switch to new alert
+ *  Alert message = driver.switchT0().alert().accept() - OK
+ *  Alert message = driver.switchTo().alert().dismiss() - Cancel
+ *  driver.switchTo().alert().senKey("TEXT") - to add a message
+ *   Toast message - not handle with alert method
+ *   
+ *  
+ */
 public class AlertUsage {
 
 	public static void main(String[] args) throws Exception {
@@ -34,7 +38,6 @@ public class AlertUsage {
 		// Simple Alert
 		WebElement element = driver.findElement(By.xpath("//button[@id='simple-alert']"));
 		element.click();
-	
 		Alert SimpleAlert = driver.switchTo().alert();
 		System.out.println(SimpleAlert.getText());
 		
@@ -48,19 +51,28 @@ public class AlertUsage {
 		SimpleAlert.accept();
 	
 		//Prompt Alert
-		/* driver.findElement(By.id("prompt-alert")).click();
-		 SimpleAlert = driver.switchTo().alert();
+		 driver.findElement(By.id("prompt-alert")).click();
+		 driver.switchTo().alert().sendKeys("text");
 		 Thread.sleep(400);
-		 SimpleAlert.sendKeys("test");
-		 SimpleAlert.accept();
-		 */
+		 driver.switchTo().alert().accept();
+		 Thread.sleep(400);
+		 
+		 
 		 //Toast Alerthttps://www.qaplayground.com/practice/alert
-		
+	
+		/*
 		 WebElement toastMessage = driver.findElement(By.id("toast-alert"));
 		toastMessage.click();
-		 String message = toastMessage.getAttribute(null)
-		 System.out.println("Alert Toast message " + message);
-		
+		WebDriverWait wait =  new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.vis)
+		String message = toastMessage.getAttribute(nul)t
+		 System.out.println("Alert Toast message " + message);	
+		 
+		 // Modern Alert 
+		driver.findElement(By.xpath("//button[contains(text(),'Sweet Alert')]")).click();
+		Alert modernAlert = driver.switchTo().alert();
+		modernAlert.accept();
+		System.out.println(modernAlert.getText());  */
 		 driver.close();
 		 driver.quit();
 
